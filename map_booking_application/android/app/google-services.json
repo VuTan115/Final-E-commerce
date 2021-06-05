@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "348639867140",
+    "project_id": "mapbooking-app",
+    "storage_bucket": "mapbooking-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348639867140:android:0d7d55cd2739d9d88c2051",
+        "android_client_info": {
+          "package_name": "com.example.map_booking_application"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348639867140-fb6fgfk6idnqdvbdm2ucb4squnnprf7r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoktlrzFxOBxpKVRXL9FaBUpUtddzf_Og"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348639867140-fb6fgfk6idnqdvbdm2ucb4squnnprf7r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
