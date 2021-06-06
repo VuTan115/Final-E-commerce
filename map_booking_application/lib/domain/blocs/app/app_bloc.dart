@@ -12,7 +12,7 @@ part 'app_state.dart';
 class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc({required AuthenticationRepository authenticationRepository})
       : _authenticationRepository = authenticationRepository,
-        super(AppInitial());
+        super(AppLoadInitial());
   // super(
   //   authenticationRepository.currentUser.uid == ''
   //       ? AppState.authenticated(authenticationRepository.currentUser)
@@ -24,6 +24,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
     AppEvent event,
   ) async* {
     try {
+      yield AppLoadInProgress();
       yield AppLoadSuccess();
     } catch (error) {
       yield AppLoadFailure(error);

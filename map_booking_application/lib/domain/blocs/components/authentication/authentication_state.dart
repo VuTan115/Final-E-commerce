@@ -12,8 +12,10 @@ class AuthenticationInitial extends AuthenticationState {}
 class AuthenticationInProgress extends AuthenticationState {}
 
 class AuthenticationSuccess extends AuthenticationState {
-  final UserModel _userModel;
-  const AuthenticationSuccess(this._userModel);
+  final UserModel userModel;
+  const AuthenticationSuccess({required this.userModel});
+  @override
+  List<Object> get props => [userModel];
 }
 
 class AuthenticationFailure extends AuthenticationState {}

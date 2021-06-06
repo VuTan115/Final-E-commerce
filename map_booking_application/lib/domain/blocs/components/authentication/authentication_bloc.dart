@@ -24,8 +24,9 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         yield AuthenticationInProgress();
       }
       if (event is AuthenticationLoggedIn) {
-        final UserModel _user = await _authenticationRepository.currentUser;
-        yield AuthenticationSuccess(_user);
+        print("chay");
+        final UserModel _user = UserModel(uid: "123");
+        yield AuthenticationSuccess(userModel: _user);
       }
       if (event is AuthenticationLoggedOut) {
         yield AuthenticationFailure();

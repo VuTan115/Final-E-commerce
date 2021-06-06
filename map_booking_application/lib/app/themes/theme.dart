@@ -7,6 +7,7 @@ final theme = ThemeData(
   primaryColorLight: const Color(0xFFB2EBF2),
   primaryColor: const Color(0xFF00BCD4),
   accentColor: const Color(0xFF009688),
+  fontFamily: 'Poppins',
   scaffoldBackgroundColor: const Color(0xFFE0F2F1),
   inputDecorationTheme: InputDecorationTheme(
     border: OutlineInputBorder(

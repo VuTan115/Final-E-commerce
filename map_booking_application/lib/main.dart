@@ -11,7 +11,6 @@ import 'bloc_observer.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = AppBlocObserver();
-
   WEMAP.Configuration.setWeMapKey(Constance.wemapAPIKEY);
   WEMAP.Configuration.setOpenWeatherKey(Constance.wemapAPIKEY);
   await Firebase.initializeApp();

@@ -27,7 +27,9 @@ class _BlankPageState extends State<BlankPage> {
     return Scaffold(
       body: Container(
         color: Colors.white,
-        child: Text("Error"),
+        child: Center(
+          child: Text("Blank Page"),
+        ),
       ),
     );
   }

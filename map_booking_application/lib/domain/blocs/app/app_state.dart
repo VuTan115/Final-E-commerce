@@ -24,7 +24,7 @@ abstract class AppState extends Equatable {
   List<Object> get props => [];
 }
 
-class AppInitial extends AppState {}
+class AppLoadInitial extends AppState {}
 
 class AppLoadSuccess extends AppState {}
 
@@ -33,4 +33,4 @@ class AppLoadFailure extends AppState {
   AppLoadFailure(this._error);
 }
 
-class AppInProgress extends AppState {}
+class AppLoadInProgress extends AppState {}
