@@ -4,6 +4,8 @@ import 'package:map_booking_application/app/pages/components/authenticate/authen
 import 'package:map_booking_application/app/pages/loading_page.dart';
 import 'package:map_booking_application/app/pages/login_page.dart';
 import 'package:map_booking_application/app/pages/main_view.dart';
+import 'package:map_booking_application/app/pages/register_page.dart';
+import 'package:map_booking_application/app/pages/setting_page.dart';
 import 'package:map_booking_application/app/pages/welcom_page.dart';
 
 class PageViewTransition<T> extends MaterialPageRoute<T> {
@@ -27,6 +29,7 @@ class AppRoute {
   static const String loginPage = '/login';
   static const String registerPage = '/register';
   static const String homePage = '/home';
+  static const String settingPage = '/setting';
   static const String errorPage = '/error';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -43,6 +46,10 @@ class AppRoute {
         return PageViewTransition(builder: (_) => HomePage());
       case loginPage:
         return PageViewTransition(builder: (_) => LoginPage());
+      case registerPage:
+        return PageViewTransition(builder: (_) => RegisterPage());
+      case settingPage:
+        return PageViewTransition(builder: (_) => SettingPage());
       default:
         return PageViewTransition(builder: (_) => LoadingPage());
     }

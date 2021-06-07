@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:map_booking_application/app/routes/app_route.dart';
+import 'package:map_booking_application/app/utils/media.dart';
 import 'package:map_booking_application/app/widgets/background.dart';
 import 'package:map_booking_application/app/widgets/my_form_feild.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:map_booking_application/app/utils/constance.dart';
+import 'package:map_booking_application/app/widgets/quber_logo.dart';
+import 'package:map_booking_application/app/widgets/social_button.dart';
 import 'package:map_booking_application/domain/blocs/components/authentication/authentication_bloc.dart';
-import 'package:map_booking_application/domain/blocs/components/login/login_bloc.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -42,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       FlutterLogo(
-                        size: 90,
+                        size: 70,
                       ),
                       Text(
                         'Sign In',
@@ -99,16 +100,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       LogInButton(
                         buttonTitle: "LOGIN",
                         onPressed: () {
-                          if (_formKey.currentState!.validate()) {
+                          if (isValidated()) {
                             print("validated");
-
                             Navigator.of(context)
                                 .pushNamedAndRemoveUntil(AppRoute.authenticate, (route) => false);
+                            context.read<AuthenticationBloc>().add(AuthenticationLoggedIn());
                           }
-
-                          // BlocProvider.of<AuthenticationBloc>(context)
-                          //     .add(AuthenticationLoggedIn());
-                          context.read<AuthenticationBloc>().add(AuthenticationLoggedIn());
                         },
                       ),
                       // buildSignInWithText
@@ -138,13 +135,29 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
     );
   }
+
+  void _signInWithGoogle() async {
+    print("Sign in with Google Button Pressed!");
+  }
+
+  void _signInWithFacebook() async {
+    print("Sign in with Facebook Button Pressed!");
+  }
+
+  void _logInButton() async {}
+
+  bool isValidated() {
+    return _formKey.currentState!.validate();
+  }
 }
 
 class SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => print('Sign Up Button Pressed'),
+      onTap: () {
+        Navigator.of(context).pushNamedAndRemoveUntil(AppRoute.registerPage, (route) => false);
+      },
       child: RichText(
         text: TextSpan(
           children: [
@@ -166,35 +179,6 @@ class SignUpButton extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class SocialButton extends StatelessWidget {
-  final VoidCallback onTap;
-  final String? imageUrl;
-  const SocialButton({Key? key, this.imageUrl, required this.onTap}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        height: 60.0,
-        width: 60.0,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black26,
-              offset: Offset(0, 2),
-              blurRadius: 6.0,
-            ),
-          ],
-        ),
-        child: Image.asset(imageUrl!),
       ),
     );
   }
@@ -253,18 +237,4 @@ class LogInButton extends StatelessWidget {
       ),
     );
   }
-}
-
-void _signInWithGoogle() async {
-  print("Sign in with Google Button Pressed!");
-}
-
-void _signInWithFacebook() async {
-  print("Sign in with Facebook Button Pressed!");
-}
-
-void _logInButton() async {}
-
-isValidated(GlobalKey<FormState> formKey) {
-  return formKey.currentState!.validate();
 }

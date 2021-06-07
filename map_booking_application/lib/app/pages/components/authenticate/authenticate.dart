@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:map_booking_application/app/pages/loading_page.dart';
 import 'package:map_booking_application/app/pages/main_view.dart';
 import 'package:map_booking_application/app/routes/app_route.dart';
 import 'package:map_booking_application/domain/blocs/components/authentication/authentication_bloc.dart';

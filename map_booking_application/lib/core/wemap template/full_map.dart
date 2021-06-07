@@ -40,7 +40,8 @@ class FullMapState extends State<FullMap> {
       body: Stack(
         children: <Widget>[
           WeMap(
-            myLocationEnabled: true,
+            onCameraTrackingChanged: (mode) => {},
+            onUserLocationUpdated: (location) => {location.position},
             onMapClick: (point, latlng, _place) async {
               place = _place;
             },
@@ -53,9 +54,10 @@ class FullMapState extends State<FullMap> {
               target: LatLng(21.036029, 105.782950),
               zoom: 16.0,
             ),
-            destinationIcon: "assets/symbols/destination.png",
+            destinationIcon: "assets/icons/placeholder.png",
           ),
           WeMapSearchBar(
+            geocoder: WeMapGeocoder.Pelias,
             location: myLatLng,
             onSelected: (_place) {
               setState(() {

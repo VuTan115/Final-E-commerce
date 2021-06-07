@@ -5,7 +5,7 @@ import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
 import 'package:map_booking_application/domain/models/password_model.dart';
 import 'package:map_booking_application/domain/models/username_model.dart';
-import 'package:map_booking_application/domain/repositories/authentication_repository.dart';
+import 'package:map_booking_application/infrastructure/repositories/authentication_repository.dart';
 part 'login_event.dart';
 part 'login_state.dart';
 

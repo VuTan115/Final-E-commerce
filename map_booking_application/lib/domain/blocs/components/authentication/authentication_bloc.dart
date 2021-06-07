@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:map_booking_application/domain/models/user_model.dart';
-import 'package:map_booking_application/domain/repositories/authentication_repository.dart';
+import 'package:map_booking_application/infrastructure/repositories/authentication_repository.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';
@@ -24,7 +24,6 @@ class AuthenticationBloc extends Bloc<AuthenticationEvent, AuthenticationState> 
         yield AuthenticationInProgress();
       }
       if (event is AuthenticationLoggedIn) {
-        print("chay");
         final UserModel _user = UserModel(uid: "123");
         yield AuthenticationSuccess(userModel: _user);
       }

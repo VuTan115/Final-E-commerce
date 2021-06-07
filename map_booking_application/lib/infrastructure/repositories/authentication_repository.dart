@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:map_booking_application/domain/models/user_model.dart';
-import 'package:map_booking_application/domain/repositories/exceptions/authetication_exception.dart';
+import 'package:map_booking_application/infrastructure/repositories/exceptions/authetication_exception.dart';
 
 class AuthenticationRepository {
   final FirebaseAuth _firebaseAuth;

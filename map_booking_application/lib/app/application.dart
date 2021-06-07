@@ -7,7 +7,7 @@ import 'package:map_booking_application/app/routes/app_route.dart';
 import 'package:map_booking_application/app/themes/theme.dart';
 import 'package:map_booking_application/domain/blocs/app/app_bloc.dart';
 import 'package:map_booking_application/domain/blocs/components/authentication/authentication_bloc.dart';
-import 'package:map_booking_application/domain/repositories/authentication_repository.dart';
+import 'package:map_booking_application/infrastructure/repositories/authentication_repository.dart';
 
 class Application extends StatelessWidget {
   final AuthenticationRepository _authenticationRepository = AuthenticationRepository();

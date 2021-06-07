@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:map_booking_application/app/widgets/my_text_feild.dart';
-import 'package:map_booking_application/domain/utils/validators.dart';
+import 'package:map_booking_application/app/utils/validators.dart';
 
 class MyForm extends StatelessWidget {
   final GlobalKey<FormState>? formKey;
